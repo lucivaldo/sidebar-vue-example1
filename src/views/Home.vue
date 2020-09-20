@@ -102,6 +102,12 @@ export default {
       toggle.addEventListener('click', () => {
         dropdown.classList.toggle('data-grid__dropdown--show-content')
       })
+
+      document.addEventListener('click', event => {
+        if (!dropdown.contains(event.target)) {
+          dropdown.classList.remove('data-grid__dropdown--show-content')
+        }
+      })
     })
   },
 

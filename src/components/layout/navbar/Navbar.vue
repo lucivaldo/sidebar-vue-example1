@@ -51,6 +51,16 @@
 export default {
   name: 'Navbar',
 
+  mounted() {
+    document.addEventListener('click', event => {
+      const user = this.$refs.user
+
+      if (!user.contains(event.target)) {
+        this.showUserActions = false
+      }
+    })
+  },
+
   data() {
     return {
       showUserActions: false
