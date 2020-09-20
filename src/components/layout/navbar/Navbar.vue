@@ -61,24 +61,30 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
+  background-color: white;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 
               0 2px 2px rgba(0, 0, 0, 0.15), 
               0 4px 4px rgba(0, 0, 0, 0.15), 
               0 8px 8px rgba(0, 0, 0, 0.15);
-  margin-left: calc(2 * 1rem + 2rem);
-  transition: margin-left .3s;
+  transition: .3s;
+  position: fixed;
+  top: 0;
+  left: calc(2 * 1rem + 2rem);
+  right: 0;
+  height: 4rem;
 }
 
+// Posicionamento em relação às medidas da sidebar
 .nav--expand .navbar {
-  margin-left: 15rem;
+  left: 15rem;
 }
 
 .subnav--active .navbar {
-  margin-left: calc(2 * 1rem + 2rem + 20rem);
+  left: calc(2 * 1rem + 2rem + 20rem);
 }
 
 .nav--expand.subnav--active .navbar {
-  margin-left: calc(15rem + 20rem);
+  left: calc(15rem + 20rem);
 }
 
 .navbar {
