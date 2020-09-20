@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-    <Sidebar/>
-    <router-view/>
+    <BaseLayout>
+      <router-view/>
+    </BaseLayout>
   </div>
 </template>
 
 <script>
-import Sidebar from './components/layout/sidebar/Sidebar'
+import BaseLayout from './components/layout/base-layout/BaseLayout'
 
 export default {
   name: 'App',
 
   components: {
-    Sidebar,
+    BaseLayout,
   }
 }
 </script>

@@ -417,38 +417,36 @@ export default {
 
   methods: {
     configureToogleNav() {
-      const nav = this.$refs['nav']
       const toggleNav = this.$refs['toggle-nav']
       
       toggleNav.addEventListener('click', () => {
-        nav.classList.toggle('nav--expand')
+        document.body.classList.toggle('nav--expand')
       })
     },
 
     configureNav() {
       const nav = this.$refs['nav']
-      const subnav = this.$refs['subnav']
-      const items = nav.querySelectorAll('.item')
+      const itemsNav = nav.querySelectorAll('.item')
 
-      items.forEach(item => {
-        item.addEventListener('click', () => {
-          const itemTarget = item.dataset.target
+      itemsNav.forEach(itemNav => {
+        itemNav.addEventListener('click', () => {
+          const itemNavTarget = itemNav.dataset.target
 
-          if (itemTarget != null) {
-            subnav.classList.add('subnav--active')
+          if (itemNavTarget != null) {
+            document.body.classList.add('subnav--active')
 
-            document.querySelectorAll('.item--active').forEach(itemActive => {
-              itemActive.classList.remove('item--active')
+            nav.querySelectorAll('.item--active').forEach(item => {
+              item.classList.remove('item--active')
             })
 
-            item.classList.add('item--active')
+            itemNav.classList.add('item--active')
 
-            const elementsTargetOpened = document.querySelectorAll('.subnav__nav--show')
-            elementsTargetOpened.forEach(item => {
+            const elementsTargetShown = document.querySelectorAll('.subnav__nav--show')
+            elementsTargetShown.forEach(item => {
               item.classList.remove('subnav__nav--show')
             })
 
-            const elementTarget = document.querySelector(itemTarget)
+            const elementTarget = document.querySelector(itemNavTarget)
             elementTarget.classList.add('subnav__nav--show')
           }
         })
@@ -480,7 +478,7 @@ export default {
   width: calc(2 * 1rem + 2rem);
 }
 
-.nav--expand {
+.nav--expand .nav {
   width: 15rem;
 }
 
@@ -492,7 +490,7 @@ export default {
   background-color: #040609;
 }
 
-.subnav--active {
+.subnav--active .subnav {
   width: 20rem;
 }
 
