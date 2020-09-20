@@ -474,7 +474,8 @@ export default {
   background-color: #112CD3;
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   transition: width .3s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: calc(2 * 1rem + 2rem);
 }
