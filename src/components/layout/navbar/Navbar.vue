@@ -52,18 +52,26 @@ export default {
   name: 'Navbar',
 
   mounted() {
-    document.addEventListener('click', event => {
-      const user = this.$refs.user
+    document.addEventListener('click', this.closeUser)
+  },
 
-      if (!user.contains(event.target)) {
-        this.showUserActions = false
-      }
-    })
+  beforeDestroy() {
+    document.removeEventListener('click', this.closeUser)
   },
 
   data() {
     return {
       showUserActions: false
+    }
+  },
+
+  methods: {
+    closeUser(event) {
+      const user = this.$refs.user
+
+      if (!user.contains(event.target)) {
+        this.showUserActions = false
+      }
     }
   }
 }
