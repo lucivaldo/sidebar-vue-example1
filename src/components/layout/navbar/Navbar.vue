@@ -1,5 +1,13 @@
 <template>
   <div class="navbar">
+    <div class="app">
+      <div class="app__logo">
+        <img src="../../../assets/images/athenas.svg" alt="Logo">
+      </div>
+
+      <span class="app__name">Athenas</span>
+    </div>
+
     <div class="notifications">
       <div class="notifications__email">
         <span class="icon"><i class="fas fa-envelope"></i></span>
@@ -78,6 +86,27 @@ export default {
   justify-content: flex-end;
   align-items: center;
   padding: .5rem 2rem;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+
+  &__logo {
+    margin-right: .75rem;
+    width: 3rem;
+    height: auto;
+    overflow: hidden;
+  }
+
+  &__name {
+    color: #444;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
 }
 
 .notifications {
