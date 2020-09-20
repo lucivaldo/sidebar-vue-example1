@@ -103,9 +103,18 @@ export default {
   &__name {
     color: #444;
     font-weight: 700;
-    font-size: 1.35rem;
-    letter-spacing: 2px;
+    font-size: 1.75rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    transition: .3s;
+    // font-family: 'Pathway Gothic One', sans-serif;
+    // font-family: 'Carter One', cursive;
+    font-family: 'Marcellus', serif;
+    // font-family: 'Alata', sans-serif;
+
+    &:hover {
+      color: #111;
+    }
   }
 }
 
