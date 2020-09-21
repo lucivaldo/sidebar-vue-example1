@@ -1,4 +1,9 @@
-# athenasfront2
+# Layout com sidebar e navbar
+
+Exemplo de layout com sidebar com subnavegação e uma navbar.
+
+Observação: Não foi utilizado componentização na sidebar para o exemplo poder ser
+adaptado em qualquer projeto, mesmo não utilizando Vue.
 
 ## Project setup
 ```
@@ -15,15 +20,7 @@ yarn serve
 yarn build
 ```
 
-### Run your unit tests
-```
-yarn test:unit
-```
-
 ### Lints and fixes files
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
