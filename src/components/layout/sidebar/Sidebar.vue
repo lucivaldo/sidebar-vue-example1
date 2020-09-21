@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar" ref="sidebar">
     <nav class="nav" ref="nav">
       <a href="#" class="item" data-target="#controle-almoxarifado" title="Controle Almoxarifado">
         <span class="icon icon-leading"><i class="fas fa-dolly-flatbed"></i></span>
@@ -411,11 +411,24 @@ export default {
   name: 'Sidebar',
 
   mounted() {
+    this.configureSidebar()
     this.configureToogleNav()
     this.configureNav()
   },
 
   methods: {
+    configureSidebar() {
+      const sidebar = this.$refs.sidebar
+
+      sidebar.addEventListener('mouseleave', () => {
+        document.body.classList.add('subnav--shrink')
+      })
+
+      sidebar.addEventListener('mouseenter', () => {
+        document.body.classList.remove('subnav--shrink')
+      })
+    },
+
     configureToogleNav() {
       const toggleNav = this.$refs['toggle-nav']
       
@@ -488,10 +501,16 @@ export default {
 
 .subnav {
   background-color: #040609;
+  overflow: hidden;
+  transition: width .3s;
 }
 
 .subnav--active .subnav {
   width: 20rem;
+}
+
+.subnav--active.subnav--shrink .subnav {
+  width: 0;
 }
 
 .subnav .subnav__nav {

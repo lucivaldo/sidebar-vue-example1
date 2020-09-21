@@ -101,6 +101,14 @@ export default {
   left: calc(2 * 1rem + 2rem + 20rem);
 }
 
+.nav--expand.subnav--active.subnav--shrink .navbar {
+  left: calc(15rem);
+}
+
+.subnav--active.subnav--shrink .navbar {
+  left: calc(2 * 1rem + 2rem);
+}
+
 .nav--expand.subnav--active .navbar {
   left: calc(15rem + 20rem);
 }

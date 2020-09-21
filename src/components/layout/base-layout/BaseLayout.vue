@@ -30,6 +30,7 @@ export default {
 .main {
   margin-left: calc(2 * 1rem + 2rem);
   margin-top: 4rem;
+  transition: margin-left .3s;
 }
 
 .nav--expand .main {
@@ -42,5 +43,13 @@ export default {
 
 .nav--expand.subnav--active .main {
   margin-left: calc(15rem + 20rem);
+}
+
+.nav--expand.subnav--active.subnav--shrink .main {
+  margin-left: calc(15rem);
+}
+
+.subnav--active.subnav--shrink .main {
+  margin-left: calc(2 * 1rem + 2rem);
 }
 </style>
