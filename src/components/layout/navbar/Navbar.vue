@@ -5,7 +5,7 @@
         <img src="../../../assets/images/athenas.svg" alt="Logo">
       </div>
 
-      <span class="app__name">Athenas</span>
+      <span class="app__name">Project Name</span>
     </div>
 
     <div class="notifications">
